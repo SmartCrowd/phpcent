@@ -174,7 +174,7 @@ class Client
         $ctx = hash_init("sha256", HASH_HMAC, $this->secretKey);
         hash_update($ctx, $client_id);
         hash_update($ctx, $channel);
-        hash_update($ctx, !empty($info) ? json_encode($info) : "{}");
+        hash_update($ctx, !empty($info) ? json_encode($info) : "");
 
         return hash_final($ctx);
     }
